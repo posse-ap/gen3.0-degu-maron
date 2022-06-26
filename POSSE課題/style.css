@@ -1,0 +1,31 @@
+/* header */
+.header_inner {
+  display: flex;
+  align-items: center;
+  padding: 15px 24px; 
+}
+.header_nav{
+  margin-left: auto;
+}
+.header_SNS{
+  margin-left: 32px;
+}
+
+/* 公式LINEセクション */
+.officialline{
+  margin-top: 144px;
+}
+.officialline_body{
+  background: url(./assets-ph1-website-main/img/bg-line.jpg);   /* 要調整 */
+}
+.line_icon{
+  background: radial-gradient(#fff 60%, transparent 60%);
+  width: 40px;
+}
+.officialline_top{
+  font-size: 40px;
+}
+.officialline_top{
+  display: flex;
+  align-items: center;
+}
