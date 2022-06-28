@@ -60,11 +60,78 @@ ul{
   gap: 16px;
 }
 
+/* メインセクション */
+main{
+  padding-top: 80px;
+}
+.top-hero_inner{
+  display: flex;
+  margin: 0 auto;
+  max-width: 1280px;
+  position: relative;
+}
+.top-hero_body{
+  background-color: #eff2f5;
+  border-radius: 24px;
+  padding: 50px 62px;
+  position: relative;
+  white-space: nowrap;
+  align-self: center;
+}
+.top-hero_body_title{
+  color: #0071bc;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 180%;
+  margin: 0;
+}
+.top-hero_body_catchcopy{
+  display: inline-block;
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 80px;
+  margin-top: 10px;
+}
+.top-hero_image{
+  border-radius: 80px 0 0 80px;
+  max-height: 680px;
+  margin-left: -125px;
+  margin-right: calc(50% - 50vw);
+  display: block;
+  overflow: hidden;
+}
+.top-hero_image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+.top-hero_scroll{
+  align-items: center;
+  bottom: 24px;
+  display: inline-flex;
+  font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  gap: 6px;
+  left: 32px;
+  line-height: 150%;
+  position: absolute;
+}
+.top-hero_scroll::before{
+  background-color: #ccc;
+  border-radius: 8px;
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+}
+
 /* 公式LINEセクション */
 .officialline{
   margin-top: 144px;
 }
-.officialline_inner{
+.officialline_container{
   margin: 0 auto;
   padding: 0 24px;
   max-width: 1032px;
@@ -183,7 +250,6 @@ footer{
   line-height: 1;
   margin-left: 35px;
 }
-
 .footer_inner{
   padding: 56px 24px 48px;
 }
@@ -209,7 +275,6 @@ footer{
   justify-content: center;
   margin-top: 32px;
 }
-
 .footer_copyright{
   border-top: solid 1px #eee;
   color: #666;
