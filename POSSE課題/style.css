@@ -126,6 +126,48 @@ main{
   height: 8px;
   width: 8px;
 }
+.top-container{
+  margin-top: 96px;
+}
+.top-container_inner{
+  margin: 0 auto;
+  max-width: 1032px;
+  padding: 0 24px;
+  width: 100%;
+}
+.top-container_heading{
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 150%;
+  text-align: center;
+}
+.heading_caption{
+  color: #0071bc;
+  display: block;
+  font-family: "Plus Jakarta Sans", "Noto Sans JP", sans-serif;font-size: 14px;
+  line-height: 180%;
+  margin-top: 8px;
+}
+.top-container_body{
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 42px;
+}
+.top-about_image{
+  border-radius: 16px;
+  overflow: hidden;
+}
+.about_img{
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.top-about_content{
+  align-self: center;
+  font-size: 14px;
+  line-height: 180%;
+}
 
 /* 公式LINEセクション */
 .officialline{
