@@ -409,22 +409,19 @@ img{
   padding: 19px;
   text-align: left;
   width: 100%;
+  cursor: pointer;
+}
+.quiz-box_answer_button:focus{
+  background-color: #eff2f5;
+  border: solid 5px #0071bc;
 }
 .icon_arrow{
-  font-size: 16px;
   margin-left: auto;
+  margin-right: 8px;
   position: relative;
-}
-.icon_arrow::before{
-  content: "";
-  width: 0;
-  height: 0;
-  border: solid 8px transparent;
-  border-left: solid 16px #333;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  margin-top: -6px;
+  height: 14px;
+  width: 11px;
+  background: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
 }
 .quiz-box_answer_correct{
   background-color: #fff2f5;
