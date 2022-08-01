@@ -357,7 +357,9 @@ small{
   margin-top: 12px;
 }
 .quiz-container{
+  margin: auto;
   margin-top: 120px;
+  max-width: 984px;
   padding: 0 24px;
 }
 .quiz-box_question_title{
@@ -382,7 +384,7 @@ small{
   margin-top: 24px;
 }
 .quiz-box_question_image{
-  margin: 64px auto o;
+  margin: 64px auto;
   max-width: 718px;
 }
 img{
@@ -429,6 +431,10 @@ img{
   display: none;
   margin-top: 16px;
   padding: 24px 40px;
+  max-width: 984px;
+}
+.correct:focus ~ .quiz-box_answer_correct{
+  display: block;
 }
 .quiz-box_answer_correct_title{
   font-size: 24px;
