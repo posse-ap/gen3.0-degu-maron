@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&display=swap"
     rel="stylesheet">
+  <script src="../assets-ph1-website-main/scripts/quiz.js" defer></script>
 </head>
 <body>
   <header class="header_inner">
@@ -72,14 +73,9 @@
               </button>
             </li>
             <li class="quiz-box_answer_item">
-              <button class="quiz-box_answer_button correct js-answer" data-answer="1">約79万人
+              <button class="quiz-box_answer_button js-answer" data-answer="1">約79万人
                 <i class="icon_arrow"></i>
               </button>
-              <div class="quiz-box_answer_correct js-answer_box">
-                <p class="quiz-box_answer_correct_title">正解！</p>
-                <p class="quiz-box_answer_correct_content_label">
-                  <span class="quiz-box_answer_correct_label">A</span>
-                  <span class="js-answer_text">約79万人</span>
             </li>
             <li class="quiz-box_answer_item">
               <button class="quiz-box_answer_button js-answer" data-answer="2">約183万人
@@ -87,6 +83,13 @@
               </button>
             </li>
           </ul> 
+        </div>
+        <div class="quiz-box_answer_correct js-answer-box">
+          <p class="quiz-box_answer_correct_title js-answer_title"></p>
+          <p class="quiz-box_answer_correct_content">
+            <span class="quiz-box_answer_correct_content_label">A</span>
+            <span class="js-answer_text"></span>
+          </p>
         </div>
         <blockquote class="quiz-box_note">
           <img src="../assets-ph1-website-main/img/icon/icon-note.svg" alt="ノート" class="icon_note">経済産業省2019年3月 - IT人材需給に関する調査

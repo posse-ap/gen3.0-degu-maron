@@ -412,18 +412,24 @@ img{
   text-align: left;
   width: 100%;
   cursor: pointer;
+  color: #000;
 }
-.quiz-box_answer_button:focus{
+.quiz-box_answer_button.is-selected{
   background-color: #eff2f5;
   border: solid 5px #0071bc;
 }
+.quiz-box_answer_button:disabled{
+  cursor: default;
+}
 .icon_arrow{
   margin-left: auto;
-  margin-right: 8px;
   position: relative;
   height: 14px;
   width: 11px;
   background: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
+}
+.quiz-box_answer_button:disabled .icon_arrow{
+  display: none;
 }
 .quiz-box_answer_correct{
   background-color: #fff2f5;
@@ -433,7 +439,11 @@ img{
   padding: 24px 40px;
   max-width: 984px;
 }
-.correct:focus ~ .quiz-box_answer_correct{
+.quiz-box_answer_correct.is-correct{
+  display: block;
+}
+.quiz-box_answer_correct.is-incorrect{
+  background-color: #eff2f5;
   display: block;
 }
 .quiz-box_answer_correct_title{
@@ -442,6 +452,12 @@ img{
   letter-spacing: 0.05em;
   line-height: 1.5;
   margin: 0;
+}
+.quiz-box_answer_correct_title.is-correct{
+  color: #e34e70;
+}
+.quiz-box_answer_correct_title.is-incorrect{
+  color: #0071bc;
 }
 .quiz-box_answer_correct_content{
   align-items: baseline;
@@ -471,6 +487,6 @@ img{
 .icon_note{
   margin-right: 16px;
 }
-.quiz-box:not(first-of-type){
+.quiz-box:not(:first-of-type){
   margin-top: 120px;
 }
