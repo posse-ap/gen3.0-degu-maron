@@ -180,7 +180,7 @@ main{
   width: 100%;
 }
 .officialline_body{
-  background: url(./assets-ph1-website-main/img/bg-line.jpg) center center / cover;
+  background: url(../img/bg-line.jpg) center center / cover;
   border-radius: 56px;
   padding: 68px;
   overflow: hidden;
@@ -332,7 +332,7 @@ small{
 
 /* クイズページ */
 .quiz-hero{
-  background: url(./assets-ph1-website-main/img/quiz/bg-hero.jpg) center center / cover;
+  background: url(../img/quiz/bg-hero.jpg) center center / cover;
   padding: 110px 0 76px;
 }
 .quiz-hero_container{
@@ -426,7 +426,7 @@ img{
   position: relative;
   height: 14px;
   width: 11px;
-  background: url(./assets-ph1-website-main/img/icon/icon-arrow.svg);
+  background: url(../img/icon/icon-arrow.svg);
 }
 .quiz-box_answer_button:disabled .icon_arrow{
   display: none;

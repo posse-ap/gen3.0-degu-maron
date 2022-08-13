@@ -47,7 +47,7 @@
   allQuiz.forEach(quiz => {
     const answers = quiz.querySelectorAll('.js-answer');
     const selectedQuiz = Number(quiz.getAttribute('data-quiz'));
-    const answerBox = quiz.querySelector('.js-answer-box');
+    const answerBox = quiz.querySelector('.js-answer_box');
     const answerTitle = quiz.querySelector('.js-answer_title');
     const answerText = quiz.querySelector('.js-answer_text');
 
