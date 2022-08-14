@@ -7,6 +7,7 @@
   <title>POSSE 初めてのweb製作</title>
   <link rel="stylesheet" href="./assets-ph1-website-main/styles/normalize.css">
   <link rel="stylesheet" href="./assets-ph1-website-main/styles/style.css">
+  <script src="./assets-ph1-website-main/scripts/hamburger.js" defer></script>
   <!-- Google Fonts 読み込み -->
   <link rel="preconnect" href="https://fonts.google.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +23,7 @@
     <nav class="header_nav">
       <ul class="header_nav_list">
         <li class="header_nav_item">
-          <a href="top.html" class="header_nav_item_link">POSSEとは</a>
+          <a href="index.html" class="header_nav_item_link">POSSEとは</a>
         </li>
         <li class="header_nav_item">
           <a href="./quiz/index.html" class="header_nav_item_link">クイズ</a>
@@ -41,10 +42,20 @@
         </a>
       </li>      
     </ul>
+    <button class="header_hamburger" id="js-hamburger">
+      <span class="hamburger_bar" id="js-hamburgerBar1"></span>
+      <span class="hamburger_bar" id="js-hamburgerBar2"></span>
+    </button>
   </header>
 
 <!-- メインセクション -->
   <main>
+    <nav class="menu" id="js-menu">
+      <ul class="menu_list">
+        <li class="menu_item"><a href="index.html">POSSEとは</a></li>
+        <li class="menu_item"><a href="./quiz/index.html">クイズ</a></li>
+      </ul>
+    </nav>
     <section class="top-hero">
       <div class="top-hero_inner">
         <div class="top-hero_body">
