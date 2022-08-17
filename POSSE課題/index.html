@@ -48,14 +48,16 @@
     </button>
   </header>
 
+<!-- メニュー -->
+  <nav class="menu" id="js-menu">
+    <ul class="menu_list">
+      <li class="menu_item"><a href="index.html">POSSEとは</a></li>
+      <li class="menu_item"><a href="./quiz/index.html">クイズ</a></li>
+    </ul>
+  </nav>
+
 <!-- メインセクション -->
   <main>
-    <nav class="menu" id="js-menu">
-      <ul class="menu_list">
-        <li class="menu_item"><a href="index.html">POSSEとは</a></li>
-        <li class="menu_item"><a href="./quiz/index.html">クイズ</a></li>
-      </ul>
-    </nav>
     <section class="top-hero">
       <div class="top-hero_inner">
         <div class="top-hero_body">
@@ -87,16 +89,18 @@
   </main>
 
   <!-- 公式LINE -->
-  <div class="officialline">
+  <div class="officialline" id="js-lineSection">
     <div class="officialline_container">
       <div class="officialline_body">
         <div class="officialline_body_inner">
           <h2 class="officialline_top">
             <img src="./assets-ph1-website-main/img/icon/icon-line.svg" alt="lineアイコン" class="official_line_icon">
-            POSSE 公式LINE
+            <p class="officialline_top_text">
+              POSSE 公式LINE
+            </p>
           </h2>
           <div class="officialline_content">
-            <p>公式LINEにてご質問を随時受け付けております。<br>
+            <p class="officialline_content_text">公式LINEにてご質問を随時受け付けております。<br>
               詳細やPOSSE最新情報につきましては、公式LINEにてお知らせ致しますので<br>
               下記ボタンより友達追加をお願いします！</p>
           </div>
@@ -112,9 +116,9 @@
   </div>
 
   <!-- footer -->
-  <footer>
-    <div class="footer_line">
-      <a href="https://line.me/R/ti/p/@651htnqp?from=page" target="_blank" class="footer_line_link">
+  <footer id="js-footer">
+    <div class="footer_line" id="js-footerLine">
+      <a href="https://line.me/R/ti/p/@651htnqp?from=page" target="_blank" class="footer_line_link" id="js-footerLineLink">
         <img src="./assets-ph1-website-main/img/icon/icon-line.svg" alt="LINEアイコン" class="footer_line_icon">
         <p class="footer_line_link_text">POSSE公式LINEで<br>最新情報をGET！</p>
         <img src="./assets-ph1-website-main/img/icon/icon-link-light.svg" alt="リンク" class="footer_line_link_icon">
@@ -123,7 +127,7 @@
     <div class="footer_inner">
       <div class="footer_siteinfo">
         <span class="footer_logo">
-          <img src="./assets-ph1-website-main/img/logo.svg" alt="POSSE">
+          <img src="./assets-ph1-website-main/img/logo.svg" alt="POSSE" id="js-footerLogo">
         </span>
         <a href="https://posse-ap.com/" target="_blank" class="footer_siteinfo_link">POSSE公式サイト
           <img src="./assets-ph1-website-main/img/icon/icon-link-gray-dark.svg" alt="リンク" class="footer_siteinfo_link_icon">
@@ -144,7 +148,7 @@
         </ul>
       </div>
     </div>
-    <div class="footer_copyright">
+    <div class="footer_copyright" id="js-copyRight">
       <small>&copy; 2022 POSSE</small>
     </div>
   </footer>
