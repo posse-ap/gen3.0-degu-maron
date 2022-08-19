@@ -50,7 +50,7 @@
   function quizHtml(quizItem, questionNumber) {
 
     //回答
-    const answersHtml = quizItem.answers.map((answer, answerIndex) => `<li class="quiz-box_answer_itme">
+    const answersHtml = quizItem.answers.map((answer, answerIndex) => `<li class="quiz-box_answer_item">
         <button class="quiz-box_answer_button js-answer" data-answer='${answerIndex}'>
         ${answer}<i class="icon_arrow"></i>
         </button>
@@ -87,7 +87,7 @@
         </div>
       </div>
       ${noteHTML}
-    <section>`
+    </section>`
   }
 
   //シャッフル機能
