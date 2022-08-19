@@ -557,13 +557,11 @@ small{
 .quiz-hero{
   background: url(../img/quiz/bg-hero.jpg) center center / cover;
   padding: 60px 16px 32px;
-  width: 100%;
 }
 .quiz-hero_container{
   margin: 0 auto;
   max-width: 1032px;
   padding: 0 16px;
-  width: 100%;
 }
 .hero_title{
   color: #fff;
