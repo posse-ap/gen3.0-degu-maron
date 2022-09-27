@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./assets/styles/normalize.css">
+  <link rel="stylesheet" href="./assets/styles/style.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" defer></script>
+  <script type="text/javascript" src="./assets/scripts/languageChart.js" defer></script>
+  <script type="text/javascript" src="./assets/scripts/studyChart.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header_logo">
+      <img src="./assets/img/posse.svg" alt="posse">
+    </div>
+    <div class="header_title">4th week</div>
+    <button>記録・投稿</button>
+  </header>
+  <main>
+    <div class="main_content">
+      <div class="main_content_left">
+        <div class="main_content_hours">
+          <div class="hour_data">
+            <p class="hour_data_title">Today</p>
+            <p class="hour_data_figure">3</p>
+            <p class="hour_data_unit">hour</p>
+          </div>
+          <div class="hour_data">
+            <p class="hour_data_title">Month</p>
+            <p class="hour_data_figure">120</p>
+            <p class="hour_data_unit">hour</p>
+          </div>
+          <div class="hour_data">
+            <p class="hour_data_title">Total</p>
+            <p class="hour_data_figure">1348</p>
+            <p class="hour_data_unit">hour</p>
+          </div>
+        </div>
+        <div class="main_content_bar-graph">
+          <div id="barGraph" class="bar-graph"></div>
+        </div>
+      </div>
+      <div class="main_content_right">
+        <div class="main_content_language">
+          <div id="languageChart" class="language_chart"></div>
+        </div>
+        <div class="main_content_study-content">
+          <div id="studyChart" class="stady_chart"></div>
+        </div>
+      </div>
+    </div>
+    <div class="main_bottom">
+      <div class="main_bottom_arrow arrow_left"></div>
+      <p class="main_bottom_month">2020年10月</p>
+      <div class="main_bottom_arrow arrow_right"></div>  
+    </div>
+  </main>
+</body>
+</html>
