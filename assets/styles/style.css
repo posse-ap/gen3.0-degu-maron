@@ -1,5 +1,135 @@
+/* header */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+.header_logo{
+  margin-left: 30px;
+}
+.header_logo img{
+  height: 25px;
+}
+.header_title{
+  margin-left: 20px;
+  color: rgb(135, 186, 253);
+}
+.header_record-button{
+  margin-left: auto;
+  margin-right: 30px;
+  padding: 10px 40px;
+  border-radius: 30px;
+  border: #fff;
+  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 245, 255));
+  color: #fff;
+  box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
+}
+
+/* main */
+main{
+  margin-top: 60px;
+  background-color: rgb(243, 243, 243);
+  padding: 25px 60px 0;
+}
+.main_content{
+  display: flex;
+}
+.main_content_left{
+  width: 50%;
+  padding-right: 10px;
+}
+.main_content_hours{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.hour_data{
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+.hour_data_title{
+  color: rgb(50, 101, 255);
+  font-size: 15px;
+  line-height: 20%;
+}
+.hour_data_figure{
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 20%;
+}
+.hour_data_unit{
+  color: rgb(169, 216, 249);
+  font-size: 15px;
+  line-height: 20%;
+}
+.main_content_bar-graph{
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.main_content_right{
+  width: 50%;
+  padding-left: 10px;
+  display: flex;
+}
+
+
 /* 学習言語 */
-.language_chart{
-  width: 900px;
-  height: 500px;
+.main_content_language{
+  border-radius: 10px;
+  background-color: #fff;
+  width: 50%;
+}
+/* .language_chart{
+  width: 300px;
+  width: 50%;
+  height: 200px;
+}  */
+
+/* 学習コンテンツ */
+.main_content_study-content{
+  /* margin-top: 20px; */
+  background-color: #fff;
+  border-radius: 10px;
+  width: 50%;
+}
+/* .study_chart{
+  width: 300px;
+  height: 200px;
+} */
+
+/* bottom */
+.main_bottom{
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+}
+.main_bottom_arrow{
+  margin-top: 18px;
+  border-bottom: solid 2px rgb(81, 179, 254);
+  border-left: solid 2px rgb(81, 179, 254);
+  width: 8px;
+  height: 8px;
+}
+.arrow_left{
+  margin-right: 5px;
+  transform: rotate(45deg);
+}
+.arrow_right{
+  margin-left: 5px;
+  transform: rotate(-135deg);
 }

@@ -11,7 +11,7 @@
     ]);
 
     var options = {
-      title: 'My Daily Activities',
+      title: '学習コンテンツ',
       pieHole: 0.4,
     };
 

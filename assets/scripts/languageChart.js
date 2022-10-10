@@ -18,6 +18,10 @@
     var options = {
       title: '学習言語',
       pieHole: 0.4,
+      legend: {
+        position: 'bottom',
+        // alignment: 'end',
+      }
     };
 
     var chart = new google.visualization.PieChart(document.getElementById('languageChart'));
