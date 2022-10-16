@@ -12,6 +12,8 @@
   <!-- google charts読み込み -->
   <script src="https://www.gstatic.com/charts/loader.js" defer></script>
   <!-- js読み込み -->
+  <script src="./assets/scripts/modal.js" defer></script>
+  <script src="./assets/scripts/calendar.js" defer></script>
   <script src="./assets/scripts/barGraph.js" defer></script>
   <script src="./assets/scripts/languageChart.js" defer></script>
   <script src="./assets/scripts/studyChart.js" defer></script>
@@ -22,8 +24,80 @@
       <img src="./assets/img/posse.svg" alt="posse">
     </div>
     <div class="header_title">4th week</div>
-    <button class="header_record-button">記録・投稿</button>
+    <button id="js-recordButton" class="header_record-button">記録・投稿</button>
   </header>
+  <div class="modal" id="js-modal">
+    <div class="modal_container">
+      <div class="modal_container_inner">
+        <div class="modal_inner_left">
+          <div class="modal_day">
+            <p class="label">学習日</p>
+            <input type="text" id="day" name="day">
+          </div>
+          <div class="modal_content">
+            <p class="label">学習コンテンツ（複数選択可）</p>
+            <div class="checkbox_container">
+              <div class="checkbox"><input type="checkbox" id="content" name="content" value="1">N予備校</div>
+              <div class="checkbox"><input type="checkbox" id="content" name="content" value="2">ドットインストール</div>
+              <div class="checkbox"><input type="checkbox" id="content" name="content" value="3">POSSE課題</div>
+            </div>
+          </div>
+          <div class="modal_language">
+            <p class="label">学習言語（複数選択可）</p>
+            <div class="checkbox_container">
+              <div class="checkbox"><input type="checkbox" id="language" name="language" value="1">HTNL</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="2">CSS</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="3">JavaScript</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="4">PHP</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="5">Laravel</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="6">SQL</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="7">SHELL</div>
+            <div class="checkbox"><input type="checkbox" id="language" name="language" value="8">情報システム基礎(その他)</div>
+            </div>
+            
+          </div>
+        </div>
+        <div class="mpdal_inner_right">
+          <div class="modal_hour">
+            <p class="label">学習時間</p>
+            <input type="text" id="hour" name="hour">
+          </div>
+          <div class="modal_twitter">
+            <p class="label">Twitter用コメント</p>
+            <input type="text" id="twitter" name="twitter">
+          </div>
+          <input type="checkbox" id="share_button">Twiterにシェアする
+        </div>
+      </div>
+      <button class="modal_record-button">記録・投稿</button>
+      <button id="js-closeButton" class="modal_close-button">×</button>
+    </div>
+    <div id="js-calendar" class="calendar">
+      <table>
+        <thead>
+          <tr>
+            <th id="prev">&lt;</th>
+            <th id="title" colspan="5">2022年10月</th>
+            <th id="next">&gt;</th>
+          </tr>
+          <tr>
+            <th class="week">Sun</th>
+            <th class="week">Mon</th>
+            <th class="week">Tue</th>
+            <th class="week">Wed</th>
+            <th class="week">Thu</th>
+            <th class="week">Fri</th>
+            <th class="week">Sat</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <th id="calendarButton" class="calendar_button">決定</th>
+        </tfoot>
+      </table>
+    </div>
+  </div>
   <main>
     <div class="main_content">
       <div class="main_content_left">
