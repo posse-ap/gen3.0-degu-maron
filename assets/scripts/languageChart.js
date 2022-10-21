@@ -1,30 +1,47 @@
 'use strict'
 {
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['Language', 'percent'],
-      ['Javascript', 42],
-      ['CSS', 18],
-      ['PHP',  10],
-      ['HTML', 10],
-      ['Laravel', 8],
-      ['SQL', 6],
-      ['SHELL', 4],
-      ['情報システム基礎知識(その他)', 2]
-    ]);
+  let type = 'doughnut';
+  const ctx = document.getElementById('languageChart').getContext('2d');
 
-    var options = {
-      title: '学習言語',
-      pieHole: 0.4,
+  const data = {
+    labels: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'SQL', 'SHELL', '情報システム基礎知識(その他)'],
+    datasets: [{
+      data: [30, 20, 10, 5, 5, 20, 20, 10],
+      backgroundColor: ['LightSkyBlue', 'SkyBlue', 'CornflowerBlue','RoyalBlue',  'Blue', 'MediumBlue', 'SlateBlue', 'BlueViolet'],
+      borderWidth: 0,
+    }],
+
+  };
+
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: '学習言語',
+        align: 'start',
+        padding: 20,
+        font: {
+          size: 15,
+        },
+      },
       legend: {
         position: 'bottom',
-        // alignment: 'end',
-      }
-    };
+        align: 'start',
+        labels: {
+          boxWidth: 13,
+          boxHeight: 13,
+        },
+      },
+    },
+    pieHole: 0.2,
+    animation: false,
+    maintainAspectRatio: false,
+  };
 
-    var chart = new google.visualization.PieChart(document.getElementById('languageChart'));
-    chart.draw(data, options);
-  }
+  const languageChart = new Chart(ctx, {
+    type: type,
+    data: data,
+    options: options,
+  })
+
 }

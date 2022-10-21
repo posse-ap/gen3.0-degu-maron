@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="./assets/styles/style.css">
   <!-- chartjs読み込み -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" defer></script>
-  <!-- google charts読み込み -->
-  <script src="https://www.gstatic.com/charts/loader.js" defer></script>
   <!-- js読み込み -->
   <script src="./assets/scripts/modal.js" defer></script>
   <script src="./assets/scripts/calendar.js" defer></script>
@@ -27,7 +25,7 @@
     <button id="js-recordButton" class="header_record-button">記録・投稿</button>
   </header>
   <div class="modal" id="js-modal">
-    <div class="modal_container">
+    <div class="modal_container" id="js-modalContainer">
       <div class="modal_container_inner">
         <div class="modal_inner_left">
           <div class="modal_day">
@@ -37,22 +35,22 @@
           <div class="modal_content">
             <p class="label">学習コンテンツ（複数選択可）</p>
             <div class="checkbox_container">
-              <div class="checkbox"><input type="checkbox" id="content" name="content" value="1">N予備校</div>
-              <div class="checkbox"><input type="checkbox" id="content" name="content" value="2">ドットインストール</div>
-              <div class="checkbox"><input type="checkbox" id="content" name="content" value="3">POSSE課題</div>
+              <div class="checkbox"><input type="checkbox" id="content1"><label for="content1" class="checkbox_label">N予備校</label></div>
+              <div class="checkbox"><input type="checkbox" id="content2"><label for="content2" class="checkbox_label">ドットインストール</label></div>
+              <div class="checkbox"><input type="checkbox" id="content3"><label for="content3" class="checkbox_label">POSSE課題</label></div>
             </div>
           </div>
           <div class="modal_language">
             <p class="label">学習言語（複数選択可）</p>
             <div class="checkbox_container">
-              <div class="checkbox"><input type="checkbox" id="language" name="language" value="1">HTNL</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="2">CSS</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="3">JavaScript</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="4">PHP</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="5">Laravel</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="6">SQL</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="7">SHELL</div>
-            <div class="checkbox"><input type="checkbox" id="language" name="language" value="8">情報システム基礎(その他)</div>
+              <div class="checkbox"><input type="checkbox" id="language1"><label for="language1" class="checkbox_label">HTNL</label></div>
+            <div class="checkbox"><input type="checkbox" id="language2"><label for="language2" class="checkbox_label">CSS</label></div>
+            <div class="checkbox"><input type="checkbox" id="language3"><label for="language3" class="checkbox_label">JavaScript</label></div>
+            <div class="checkbox"><input type="checkbox" id="language4"><label for="language4" class="checkbox_label">PHP</label></div>
+            <div class="checkbox"><input type="checkbox" id="language5"><label for="language5" class="checkbox_label">Laravel</label></div>
+            <div class="checkbox"><input type="checkbox" id="language6"><label for="language6" class="checkbox_label">SQL</label></div>
+            <div class="checkbox"><input type="checkbox" id="language7"><label for="language7" class="checkbox_label">SHELL</label></div>
+            <div class="checkbox"><input type="checkbox" id="language8"><label for="language8" class="checkbox_label">情報システム基礎(その他)</label></div>
             </div>
             
           </div>
@@ -66,13 +64,14 @@
             <p class="label">Twitter用コメント</p>
             <input type="text" id="twitter" name="twitter">
           </div>
-          <input type="checkbox" id="share_button">Twiterにシェアする
+          <input type="checkbox" id="share_button"><label for="share_button" class="share_button_label">Twiterにシェアする</label>
         </div>
       </div>
-      <button class="modal_record-button">記録・投稿</button>
+      <button id="modalRecordButton" class="modal_record-button">記録・投稿</button>
       <button id="js-closeButton" class="modal_close-button">×</button>
     </div>
     <div id="js-calendar" class="calendar">
+      <button id="js-backButton" class="calendar_close-button">←</button>
       <table>
         <thead>
           <tr>
@@ -96,6 +95,9 @@
           <th id="calendarButton" class="calendar_button">決定</th>
         </tfoot>
       </table>
+    </div>
+    <div class="loading">
+
     </div>
   </div>
   <main>
@@ -126,10 +128,14 @@
       </div>
       <div class="main_content_right">
         <div class="main_content_language">
-          <div id="languageChart" class="language_chart"></div>
+          <canvas id="languageChart" class="language_chart" height="303px" width="183px">
+            Canvas not supported...
+          </canvas>
         </div>
         <div class="main_content_study-content">
-          <div id="studyChart" class="study_chart"></div>
+          <canvas id="studyChart" class="study_chart">
+            Canvas not supported...
+          </canvas>
         </div>
       </div>
     </div>

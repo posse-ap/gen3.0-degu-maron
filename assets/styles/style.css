@@ -27,7 +27,7 @@ header{
   padding: 10px 40px;
   border-radius: 30px;
   border: #fff;
-  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 245, 255));
+  background: linear-gradient(to right, rgb(61, 181, 255), rgb(40, 233, 255));
   color: #fff;
   box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
 }
@@ -50,6 +50,7 @@ header{
 }
 .modal_container{
   position: absolute;
+  min-width: 480px;
   border-radius: 25px;
   padding: 20px 56px;
   background-color: #fff;
@@ -57,6 +58,9 @@ header{
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
+}
+.modal_container.hide{
+  display: none;
 }
 .modal_container_inner{
   display: flex;
@@ -82,7 +86,7 @@ input{
 input[type=checkbox] {
   display: none; 
 }
-.checkbox{
+.checkbox_label{
   font-size: 13px;
   background-color: rgb(245, 245, 245);
   padding: 5px 10px 5px 30px;
@@ -92,7 +96,7 @@ input[type=checkbox] {
   width: fit-content;
   position: relative;
 }
-.checkbox::after{
+.checkbox_label::after{
   position: absolute; 
   content: ""; 
   display: block; 
@@ -104,7 +108,7 @@ input[type=checkbox] {
   background-color: rgb(188, 188, 188);
   border-radius: 50%; 
 }
-.checkbox::before{
+.checkbox_label::before{
   position: absolute;
   content: "";
   display: block;
@@ -118,11 +122,50 @@ input[type=checkbox] {
   transform: rotate(45deg);
   z-index: 10;
 }
+input[type="checkbox"]:checked+.checkbox_label::after{
+  background-color: rgb(44, 161, 234);
+}
 #twitter{
   height: 100px;
 }
+.share_button_label{
+  font-size: 13px;
+  margin-top: 15px;
+  padding-left: 25px;
+  display: flex;
+  position: relative;
+}
+.share_button_label::after{
+  position: absolute; 
+  content: ""; 
+  display: block; 
+  top: 50%; 
+  left: 3px;
+  transform: translateY(-50%); 
+  width: 20px;
+  height: 20px;
+  background-color: rgb(188, 188, 188);
+  border-radius: 50%; 
+}
+.share_button_label::before{
+  position: absolute;
+  content: "";
+  display: block;
+  top: -1px;
+  left: 8.5px;
+  width: 7px;
+  height: 11px;
+  border-right: 3px solid rgb(255, 255, 255); 
+  border-bottom: 3px solid rgb(255, 255, 255); 
+  transform: rotate(45deg);
+  z-index: 10;
+}
+input[type="checkbox"]:checked+.share_button_label::after{
+  background-color: rgb(44, 161, 234);
+}
 .modal_record-button{
   cursor: pointer;
+  margin-top: 15px;
   margin-left: 50%;
   transform: translateX(-50%);
   padding: 10px 150px;
@@ -145,9 +188,6 @@ input[type=checkbox] {
   border: #fff;
   color: rgb(96, 96, 96);
 }
-.modal.openCalendar .modal_container{
-  display: none;
-}
 
 /* calendar */
 .calendar{
@@ -161,13 +201,26 @@ table{
   font-family: 'Noto Sans JP', monospace;
   font-weight: 600;
   border-radius: 25px;
-  padding: 40px 60px;
+  padding: 30px 60px 50px;
   background-color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
   text-align: center;
+}
+.calendar_close-button{
+  position: relative;
+  top: 45px;
+  left: 110px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 50%;
+  padding: 3px;
+  border: #fff;
+  color: rgb(96, 96, 96);
+  z-index: 120;
 }
 th, td{
   padding: 15px;
@@ -196,11 +249,11 @@ td.today{
   border: #fff;
   color: rgb(252, 252, 252);
   padding: 10px 40px;
-  margin-top: 15px;
-  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 245, 255));
+  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 231, 255));
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
+  box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
 }
 
 
@@ -230,7 +283,7 @@ main{
   text-align: center;
 }
 .hour_data_title{
-  color: rgb(50, 101, 255);
+  color: rgb(0, 145, 255);
   font-size: 15px;
   line-height: 20%;
 }
@@ -240,7 +293,7 @@ main{
   line-height: 20%;
 }
 .hour_data_unit{
-  color: rgb(169, 216, 249);
+  color: rgb(169, 221, 249);
   font-size: 15px;
   line-height: 20%;
 }
@@ -256,6 +309,7 @@ main{
   width: 50%;
   padding-left: 10px;
   display: flex;
+  gap: 20px;
 }
 
 
@@ -264,6 +318,7 @@ main{
   border-radius: 10px;
   background-color: #fff;
   width: 50%;
+  padding: 20px;
 }
 /* .language_chart{
   width: 300px;
@@ -273,15 +328,15 @@ main{
 
 /* 学習コンテンツ */
 .main_content_study-content{
-  /* margin-top: 20px; */
   background-color: #fff;
   border-radius: 10px;
   width: 50%;
+  padding: 20px;
 }
 /* .study_chart{
-  width: 300px;
-  height: 200px;
+  height: min-content;
 } */
+
 
 /* bottom */
 .main_bottom{
@@ -306,3 +361,17 @@ main{
   margin-left: 5px;
   transform: rotate(-135deg);
 }
+
+
+
+/* To Do
+・Twitter投稿機能
+・ローディング画面はアニメーションかな？→N予備
+・画面遷移
+
+・カレンダーで日付押したら入力
+・カレンダー先月までのは全部灰色？
+・ドーナッツチャートの大きさ変更
+・パーセント表示
+・判例丸く
+・棒グラフの棒丸っこく

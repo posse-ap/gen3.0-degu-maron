@@ -1,21 +1,52 @@
 'use strict'
 {
-  google.charts.load("current", {packages:["corechart"]});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ['content', 'percent'],
-      ['ドットインストール', 42],
-      ['N予備校',      33],
-      ['POSSE課題', 25], 
-    ]);
+  let type = 'doughnut';
+  const ctx = document.getElementById('studyChart').getContext('2d');
 
-    var options = {
-      title: '学習コンテンツ',
-      pieHole: 0.4,
-    };
+  const data = {
+    labels: ['N予備校', 'ドットインストール', '課題',],
+    datasets: [{
+      data: [40, 20, 40],
+      backgroundColor: ['LightSkyBlue', 'SkyBlue', 'CornflowerBlue'],
+      borderWidth: 0,
+    }],
+  };
 
-    var chart = new google.visualization.PieChart(document.getElementById('studyChart'));
-    chart.draw(data, options);
-  }
+  const options = {
+    plugins: {
+      title: {
+        display: true,
+        text: '学習コンテンツ',
+        align: 'start',
+        padding: 20,
+        font: {
+          size: 15,
+        },
+      },
+      legend: {
+        position: 'bottom',
+        align: 'start',
+        labels: {
+          boxWidth: 13,
+          boxHeight: 13,
+        },
+        title: {
+          font: {
+            size: 10,
+          }
+        }
+      },
+    },
+    pieHole: 0.2,
+    animation: false,
+    maintainAspectRatio: false,
+  };
+
+  const studyChart = new Chart(ctx, {
+    type: type,
+    data: data,
+    options: options,
+  })
+
+  
 }

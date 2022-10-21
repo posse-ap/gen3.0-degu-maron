@@ -8,12 +8,12 @@
   // 前月分の日付の取得
   function getCalendarHead(){
     const dates = [];
-    const d = new Date(year, month, 0).getDate();  // 前月末の日付取得
-    const n = new Date(year, month, 1).getDay();  // 月初の曜日の数値=前月分の表示個数
+    const finalDay = new Date(year, month, 0).getDate();  // 前月末の日付取得
+    const previous = new Date(year, month, 1).getDay();  // 月初の曜日の数値=前月分の表示個数
 
-    for (let i = 0; i < n; i++){
+    for (let i = 0; i < previous; i++){
       dates.unshift({    // 先頭に追加していく
-        date: d - i,
+        date: finalDay - i,
         isToday: false,
         isDisabled: true,
       });
@@ -44,7 +44,6 @@
     if (year === today.getFullYear() && month === today.getMonth()){
       for (let i = 1; i < dates[today.getDate() - 1].date; i++){
         dates[today.getDate() - (i + 1)].isDisabled = true;
-        console.log(dates[today.getDate() - (i + 1)].date)
       }
     }
 

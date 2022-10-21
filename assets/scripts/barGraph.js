@@ -3,11 +3,20 @@
 {
   let type = 'bar';
 
+  const ctx = document.getElementById('barGraph').getContext('2d');
+  const gradientStroke = ctx.createLinearGradient(0,0,0,100);
+  gradientStroke.addColorStop(0, 'rgb(20, 191, 250)');
+  gradientStroke.addColorStop(0.5, 'rgb(20, 180, 240)')
+  gradientStroke.addColorStop(1, 'rgb(19, 131, 201)');
+
   const data = {
     labels: ['', 2, '', 4, '', 6, '', 8, '', 10, '', 12, '', 14, '', 16, '', 18, '', 20, '', 22, '', 24, '', 26, '', 28, '', 30, ''],
     datasets: [{
       label: '',
-      data: [2.5, 4.3, 1.0, 3.3, 3.3, 4.0, 6.2, 7.3, 1.5, 4.0, 2.0, 5.5, 7.0, 8.0, 5.5, 3.7, 4.3, 0.7, 0.7, 1.0, 4.0, 2.5, 5.5, 1.5, 6.2, 8.0, 8.0, 2.5, 0.7, 4.0, 1.3]
+      data: [2.5, 4.3, 1.0, 3.3, 3.3, 4.0, 6.2, 7.3, 1.5, 4.0, 2.0, 5.5, 7.0, 8.0, 5.5, 3.7, 4.3, 0.7, 0.7, 1.0, 4.0, 2.5, 5.5, 1.5, 6.2, 8.0, 8.0, 2.5, 0.7, 4.0, 1.3],
+      backgroundColor: gradientStroke,
+      borderRadius: 50,
+      barThickness: 4,
     }]
   };
 
@@ -49,7 +58,6 @@
     },
   };
 
-  const ctx = document.getElementById('barGraph').getContext('2d');
   const hoursGraph = new Chart(ctx, {
     type: type,
     data: data,
