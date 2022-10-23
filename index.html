@@ -55,7 +55,7 @@
             
           </div>
         </div>
-        <div class="mpdal_inner_right">
+        <div class="modal_inner_right">
           <div class="modal_hour">
             <p class="label">学習時間</p>
             <input type="text" id="hour" name="hour">
@@ -96,8 +96,21 @@
         </tfoot>
       </table>
     </div>
-    <div class="loading">
-
+    <div id="js-loading" class="loading">
+      <div class="loader">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+      </div>
+      <button id="js-closeButton2" class="modal_close-button">×</button>
+    </div>
+    <div id="js-done" class="done">
+      <div class="done_inner">
+        <p class="done_message">AWESOME!</p>
+        <div class="done_mark"></div>
+        <p class="done_comment">記録・投稿<br>完了しました</p>
+      </div>
+      <button id="js-closeButton3" class="modal_close-button">×</button>
     </div>
   </div>
   <main>
@@ -128,14 +141,34 @@
       </div>
       <div class="main_content_right">
         <div class="main_content_language">
-          <canvas id="languageChart" class="language_chart" height="303px" width="183px">
-            Canvas not supported...
-          </canvas>
+          <div class="chart_area">
+            <canvas id="languageChart" class="language_chart" height="303px" width="183px">
+              Canvas not supported...
+            </canvas>
+          </div>
+          <div class="legend_area">
+            <p class="legend_label label_html">HTML</p>
+            <p class="legend_label label_css">CSS</p>
+            <p class="legend_label label_js">JavaScript</p>
+            <p class="legend_label label_php">PHP</p>
+            <p class="legend_label label_laravel">Larabel</p>
+            <p class="legend_label label_sql">SQL</p>
+            <p class="legend_label label_shell">SHELL</p>
+            <p class="legend_label label_info">情報システム基礎知識(その他)</p>
+          </div>
         </div>
         <div class="main_content_study-content">
-          <canvas id="studyChart" class="study_chart">
-            Canvas not supported...
-          </canvas>
+          <div class="chart_area">
+            <canvas id="studyChart" class="study_chart">
+              Canvas not supported...
+            </canvas>
+          </div>
+          <div class="legend_area">
+            <p class="legend_label label_Nyobi">N予備校</p>
+            <p class="legend_label label_dotinstall">ドットインストール</p>
+            <p class="legend_label label_task">課題</p>
+          </div>
+          
         </div>
       </div>
     </div>

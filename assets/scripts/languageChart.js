@@ -19,18 +19,12 @@
         display: true,
         text: '学習言語',
         align: 'start',
-        padding: 20,
         font: {
           size: 15,
         },
       },
       legend: {
-        position: 'bottom',
-        align: 'start',
-        labels: {
-          boxWidth: 13,
-          boxHeight: 13,
-        },
+        display: false,
       },
     },
     pieHole: 0.2,
