@@ -269,6 +269,7 @@ td.today{
   transform: translateX(-50%);
   z-index: 100;
   box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
+  cursor: pointer;
 }
 
 /* loading */
@@ -600,8 +601,5 @@ main{
 
 /* To Do
 ・カレンダーで日付押したら入力
-(・カレンダー先月までのは全部灰色？)
-(・ドーナッツチャートの大きさ変更)
 ・パーセント表示
-(・棒グラフの棒丸っこく)
 ・レスポンシブ対応

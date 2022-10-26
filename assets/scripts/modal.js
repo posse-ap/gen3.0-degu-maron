@@ -40,9 +40,11 @@
     loading.classList.add('now_loading');
     setTimeout(finish, 3000);
   });
+  // ローディング画面の×ボタン
   closeButton2.addEventListener('click', () => {
     modal.classList.remove('openModal');
   });
+  // 完了画面の×ボタン
   closeButton3.addEventListener('click', () => {
     modal.classList.remove('openModal');
     modalContainer.classList.remove('hide')

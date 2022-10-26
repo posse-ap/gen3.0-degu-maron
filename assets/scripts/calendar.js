@@ -4,6 +4,7 @@
   const today = new Date();
   let year = today.getFullYear();
   let month = today.getMonth();
+  let day = today.getDate();
 
   // 前月分の日付の取得
   function getCalendarHead(){
@@ -141,6 +142,23 @@
 
     createCalendar();
   });
+
+  // 決定ボタンでインプットに入力＆画面戻る
+  function setDay (){
+    return `${year}年${month + 1}月${day}日`
+  }
+
+  const modalContainer = document.getElementById('js-modalContainer')
+  const calendar = document.getElementById('js-calendar')
+  const decideButton =document.getElementById('calendarButton');
+  const inputDay = document.getElementById('day');
+
+  decideButton.addEventListener('click', () => {
+    inputDay.value = setDay()
+    calendar.classList.remove('openCalendar')
+    modalContainer.classList.remove('hide')
+  });
+  // 今日の日付は入れられた
 
   createCalendar();
 }
