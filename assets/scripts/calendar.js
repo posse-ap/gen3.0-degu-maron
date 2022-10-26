@@ -106,8 +106,7 @@
         }
         if (date.isDisabled){
           td.classList.add('disabled');
-        }
-
+        }   // 今月分
         tr.appendChild(td);   // tr要素の子要素の末尾に追加していく
       });
       document.querySelector('tbody').appendChild(tr);
