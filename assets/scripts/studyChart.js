@@ -25,6 +25,11 @@
       legend: {
         display: false,
       },
+      labels: {
+        render: 'percentage',
+        fontColor: 'white',
+        fontSize: 10,
+      }
     },
     pieHole: 0.2,
     animation: false,
@@ -37,5 +42,5 @@
     options: options,
   })
 
-  
+
 }
