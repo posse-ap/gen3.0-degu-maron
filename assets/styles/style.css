@@ -18,7 +18,7 @@ header{
 }
 .header_title{
   margin-left: 20px;
-  color: rgb(135, 186, 253);
+  color: #97b9d1;
 }
 .header_record-button{
   cursor: pointer;
@@ -27,9 +27,20 @@ header{
   padding: 10px 40px;
   border-radius: 30px;
   border: #fff;
-  background: linear-gradient(to right, rgb(61, 181, 255), rgb(40, 233, 255));
+  background: linear-gradient(to right, #0171bc, #3ccfff);
   color: #fff;
   box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
+}
+
+@media (max-width: 768px) {
+  .header_record-button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    margin: 0;
+    position: fixed;
+  }
 }
 
 /* modal */
@@ -43,12 +54,12 @@ header{
   content: "";
   display: block;
   background-color: rgba(0, 0, 0, .3);
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 100;
 }
 .modal_container{
-  position: absolute;
+  position: fixed;
   max-width: 900px;
   width: 65%;
   border-radius: 25px;
@@ -187,7 +198,7 @@ input[type="checkbox"]:checked+.share_button_label::after{
   width: max-content;
   border-radius: 30px;
   border: #fff;
-  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 245, 255));
+  background: linear-gradient(to right, #0171bc, #3ccfff);
   color: #fff;
   box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
 }
@@ -204,6 +215,36 @@ input[type="checkbox"]:checked+.share_button_label::after{
   color: rgb(96, 96, 96);
 }
 
+@media (max-width: 768px) {
+  .modal_container{
+    width: auto;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 40px 20px 20px;
+    overflow-x: hidden;
+  }
+  .modal_container::-webkit-scrollbar{
+    display: none;
+  }
+  .modal_container_inner{
+    display: block;
+  }
+  .modal_inner_left{
+    width: auto;
+    padding-right: 0;
+  }
+  .modal_inner_right{
+    width: auto;
+    padding-left: 0;
+  }
+  #day, #hour, #twitter{
+    width: -webkit-fill-available;
+  }
+}
+
 /* calendar */
 .calendar{
   display: none;
@@ -212,11 +253,11 @@ input[type="checkbox"]:checked+.share_button_label::after{
   display: block;
 }
 table{
-  position: absolute;
+  position: fixed;
   font-family: 'Noto Sans JP', monospace;
   font-weight: 600;
   border-radius: 25px;
-  padding: 30px 60px 50px;
+  padding: 30px 180px 50px;
   background-color: #fff;
   top: 50%;
   left: 50%;
@@ -227,7 +268,7 @@ table{
 .calendar_close-button{
   position: relative;
   top: 45px;
-  left: 110px;
+  left: 200px;
   cursor: pointer;
   font-size: 20px;
   line-height: 1;
@@ -264,12 +305,33 @@ td.today{
   border: #fff;
   color: rgb(252, 252, 252);
   padding: 10px 40px;
-  background: linear-gradient(to right, rgb(61, 181, 255), rgb(160, 231, 255));
+  background: linear-gradient(to right, #0171bc, #3ccfff);
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   box-shadow: 0 4px 10px 0 rgb(153, 243, 253);
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  table{
+    width: 100%;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 40px 20px 80px;
+    overflow-x: hidden;
+  }
+  .calendar_close-button{
+    position: fixed;
+    top: 60px;
+    left: 15px;
+  }
+  td{
+    width: 45px;
+  }
 }
 
 /* loading */
@@ -294,7 +356,6 @@ td.today{
 .loader{
   width: 60px;
   height: 60px;
-  /* background-color: bisque; */
   position: relative;
 }
 .loader div {
@@ -334,6 +395,20 @@ td.today{
   }
 }
 
+@media (max-width: 768px) {
+  .loading.now_loading{
+    position: fixed;
+    width: 95%;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 40px 20px 80px;
+    overflow-x: hidden;
+  }
+}
+
 /* done */
 .done{
   display: none;
@@ -354,7 +429,7 @@ td.today{
   width: 65%;
 }
 .done_message{
-  color: #8ccd54;
+  color: #bde360;
 }
 .done_mark{
   position: relative;
@@ -380,17 +455,31 @@ td.today{
   left: 30%;
   width: 40px;
   height: 40px;
-  background-color: rgb(147, 219, 129);
+  background-color: #bde360;
   border-radius: 50%;
 }
 .done_comment{
   margin-top: 55px;
 }
 
+@media (max-width: 768px) {
+  .done.open{
+    position: fixed;
+    width: 95%;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 40px 20px 80px;
+    overflow-x: hidden;
+  }
+}
+
 /* main */
 main{
   margin-top: 60px;
-  background-color: rgb(243, 243, 243);
+  background-color: #f5f5f8;
   padding: 25px 60px 0;
 }
 .main_content{
@@ -419,7 +508,7 @@ main{
   text-align: center;
 }
 .hour_data_title{
-  color: rgb(0, 145, 255);
+  color: #0f71bc;
   font-size: 15px;
   line-height: 20%;
 }
@@ -429,7 +518,7 @@ main{
   line-height: 20%;
 }
 .hour_data_unit{
-  color: rgb(169, 221, 249);
+  color: #97b9d1;
   font-size: 15px;
   line-height: 20%;
 }
@@ -439,6 +528,31 @@ main{
   border-radius: 10px;
   background-color: #fff;
   border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  main{
+    padding: 20px;
+  }
+  .main_content{
+    display: block;
+  }
+  .main_content_left{
+    width: auto;
+    margin: 0;
+  }
+  .main_content_right{
+    width: auto;
+    margin-left: 0;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+  .main_content_right{
+    margin-top: 16px;
+  }
+  .main_content_hours{
+    gap: 16px;
+  }
 }
 
 /* charts */
@@ -571,6 +685,16 @@ main{
   border-radius: 50%;
 }
 
+@media (max-width: 768px) {
+  .main_content_language, .main_content_study-content{
+    padding: 10px;
+    width: 45%;
+  }
+  .main_content_language{
+    margin-left: auto;
+  }
+}
+
 
 
 /* bottom */
@@ -583,23 +707,30 @@ main{
 }
 .main_bottom_arrow{
   margin-top: 18px;
-  border-bottom: solid 2px rgb(81, 179, 254);
-  border-left: solid 2px rgb(81, 179, 254);
   width: 8px;
   height: 8px;
 }
 .arrow_left{
   margin-right: 5px;
+  border-bottom: solid 2px #0f71bc;
+  border-left: solid 2px #0f71bc;
   transform: rotate(45deg);
 }
 .arrow_right{
   margin-left: 5px;
+  border-bottom: solid 2px #97b9d1;
+  border-left: solid 2px #97b9d1;
   transform: rotate(-135deg);
+}
+
+@media (max-width: 768px) {
+  .main_bottom{
+    margin-bottom: 50px;
+  }
 }
 
 
 
 /* To Do
 ・カレンダーで日付押したら入力
-・パーセント表示
 ・レスポンシブ対応

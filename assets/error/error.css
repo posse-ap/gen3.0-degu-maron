@@ -34,11 +34,11 @@ header{
   align-items: center;
 }
 .error_message{
-  color: rgb(255, 206, 147);
+  color: #f4bd67;
 }
 .error_mark{
   color: #fff;
-  background-color: rgb(255, 206, 147);
+  background-color: #f4bd67;
   border-radius: 50%;
   display: flex;
   align-items: center;
