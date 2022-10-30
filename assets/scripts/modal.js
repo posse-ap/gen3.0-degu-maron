@@ -20,6 +20,20 @@
     loading.classList.remove('now_loading');
     done.classList.add('open');
   }
+  function tweet(){
+    loading.classList.remove('now_loading');
+    const left = Math.round(window.screen.width / 2 - 275);
+    const top = (window.screen.height > 420) ? Math.round(window.screen.height / 2 - 210) : 0;
+    window.open(
+      "https://twitter.com/intent/tweet?text=" + encodeURIComponent(twitterInput.value),
+      null,
+      "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top
+    );
+  };
+
+  shareButton.addEventListener('click', () => {
+    shareButton.classList.toggle('share');
+  });
 
   openButton.addEventListener('click', () => {
     modal.classList.add('openModal');
@@ -39,24 +53,20 @@
     modalContainer.classList.add('hide');
     loading.classList.add('now_loading');
     setTimeout(finish, 3000);
+    if(shareButton.classList.contains('share')){
+      setTimeout(tweet, 1000);
+    };
   });
+
   // ローディング画面の×ボタン
   closeButton2.addEventListener('click', () => {
     modal.classList.remove('openModal');
   });
+
   // 完了画面の×ボタン
   closeButton3.addEventListener('click', () => {
     modal.classList.remove('openModal');
     modalContainer.classList.remove('hide')
     done.classList.remove('open');
   });
-  shareButton.addEventListener('click', () => {
-    const left = Math.round(window.screen.width / 2 - 275);
-    const top = (window.screen.height > 420) ? Math.round(window.screen.height / 2 - 210) : 0;
-    window.open(
-      "https://twitter.com/intent/tweet?text=" + encodeURIComponent(twitterInput.value),
-      null,
-      "scrollbars=yes,resizable=yes,toolbar=no,location=yes,width=550,height=420,left=" + left + ",top=" + top
-      );
-  })
 }

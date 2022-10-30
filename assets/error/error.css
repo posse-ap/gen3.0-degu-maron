@@ -53,3 +53,17 @@ header{
   margin-top: 20px;
   line-height: 1.5;
 }
+
+@media (max-width: 768px) {
+  .error_message{
+    font-size: 13px;
+  }
+  .error_mark{
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .error_comment{
+    font-size: 13px;
+  }
+}
