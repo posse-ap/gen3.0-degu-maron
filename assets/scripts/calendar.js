@@ -109,6 +109,15 @@
           td.classList.add('disabled');
         }   // 今月分
         tr.appendChild(td);   // tr要素の子要素の末尾に追加していく
+
+        // 学習日の入力
+        td.addEventListener('click', () => {
+          const yearMonth = document.getElementById('title');
+          const selectedDay = yearMonth.innerHTML+td.innerHTML+'日';
+          console.log(selectedDay)
+          const inputDay = document.getElementById('day');
+          inputDay.value = selectedDay;
+        })
       });
       document.querySelector('tbody').appendChild(tr);
     });
@@ -143,22 +152,14 @@
     createCalendar();
   });
 
-  // 決定ボタンでインプットに入力＆画面戻る
-  function setDay (){
-    return `${year}年${month + 1}月${day}日`
-  }
-
   const modalContainer = document.getElementById('js-modalContainer')
   const calendar = document.getElementById('js-calendar')
   const decideButton =document.getElementById('calendarButton');
-  const inputDay = document.getElementById('day');
 
   decideButton.addEventListener('click', () => {
-    inputDay.value = setDay()
     calendar.classList.remove('openCalendar')
     modalContainer.classList.remove('hide')
   });
-  // 今日の日付は入れられた
 
   createCalendar();
 }
